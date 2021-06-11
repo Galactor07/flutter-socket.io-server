@@ -26,11 +26,20 @@
 
 
  // para escuchar los mensajes del servidor       
-
-         socket.on('mensaje', function (payload) {
+         socket.on('nuevo-mensaje', function (payload) {
              console.log('Escuchando:', payload);
          })
-    </script>
+
+ // para escuchar el envio de las bandas del servidor       
+         socket.on('active-bands', function (bands) {
+
+// limpia la consola
+            console.clear();
+// muestra el resultado en una tabla             
+            console.table(bands);
+         })
+
+</script>
 
 </body>
 </html>
